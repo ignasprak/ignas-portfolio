@@ -12,10 +12,8 @@ import { Textarea } from "@/components/ui/textarea"
 
 export function CardDemo() {
     return (
-        <Card className="w-full max-w-sm">
-            <CardHeader>
-                <CardTitle>Contact Me</CardTitle>
-            </CardHeader>
+        <Card className="w-full max-w-sm font-mono">
+
 
             <CardContent>
                 <form>

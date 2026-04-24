@@ -152,16 +152,15 @@ export function TabsDemo() {
                         <CardTitle className="mb-4 font-mono text-4xl md:text-5xl lg:text-6xl">Experience</CardTitle>
 
                     </CardHeader> */}
-                    <CardContent className="relative pl-8 font-mono">
+                    <CardContent className="relative pl-0 md:pl-8 font-mono">
                         {/* Vertical line */}
-                        <div className="absolute left-3 top-0 h-full w-px bg-border" />
+                        <div className="absolute left-3 top-0 h-full w-px bg-border hidden md:block" />
 
                         <div className="space-y-12">
                             {/* Item */}
                             <div className="relative">
                                 <div className="flex flex-wrap items-center gap-3">
                                     <span className="text-2xl text-muted-foreground">2025 - 2026</span>
-                                    <span className="text-sm text-muted-foreground">—</span>
                                     <span className="text-2xl font-medium text-foreground">
                                         Customer Assistant @ Tesco
                                     </span>
@@ -177,7 +176,6 @@ export function TabsDemo() {
                             <div className="relative">
                                 <div className="flex flex-wrap items-center gap-3">
                                     <span className="text-2xl text-muted-foreground">2024</span>
-                                    <span className="text-sm text-muted-foreground">—</span>
                                     <span className="text-2xl font-medium text-foreground">
                                         Centre of Expertise Intern @ SAP
                                     </span>
@@ -204,7 +202,6 @@ export function TabsDemo() {
                             <div className="relative">
                                 <div className="flex flex-wrap items-center gap-3">
                                     <span className="text-2xl text-muted-foreground">2020 - 2024</span>
-                                    <span className="text-sm text-muted-foreground">—</span>
                                     <span className="text-2xl font-medium text-foreground">
                                         Bar Supervisor @ HAP Solutions
                                     </span>
@@ -243,9 +240,9 @@ export function TabsDemo() {
                             skills.
                         </CardDescription> */}
                     {/* </CardHeader> */}
-                    <CardContent className="relative pl-8 font-mono">
+                    <CardContent className="relative pl-0 md:pl-8 font-mono">
                         {/* Vertical line */}
-                        <div className="absolute left-3 top-0 h-full w-px bg-border" />
+                        <div className="absolute left-3 top-0 h-full w-px bg-border hidden md:block" />
 
                         <div className="space-y-12">
 

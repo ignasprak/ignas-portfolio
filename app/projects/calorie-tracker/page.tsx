@@ -28,71 +28,95 @@ export default function CalorieTrackerPage() {
                         Calorie Tracker
                     </h1>
 
+                    <div className="flex flex-wrap gap-3">
+                        {/* <Link href='#'>
+                        <Button>[Live Demo]</Button>
+                    </Link> */}
+                        <Link href='https://github.com/ignasprak/CalorieTrack'>
+                            <Button variant="outline">[GitHub]</Button>
+                        </Link>
+                    </div>
+
                     <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
                         This project helps users keep track of their nutritional intake, and also allows them to gather insights on their historical intake. This project allows for the logging of meals, and it is designed to help users achieve their nutritional goals. The website is designed with simplicity in mind.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div className="mt-4 grid gap-8 md:grid-cols-3 font-mono">
+                    {[
+                        {
+                            title: "Frontend",
+                            sections: [
+                                {
+                                    label: "Core Frameworks",
+                                    tech: ["Next.js", "React", "TypeScript", "JavaScript"],
+                                },
+                                {
+                                    label: "UI & Styling",
+                                    tech: ["Tailwind CSS", "shadcn/ui"],
+                                },
+                            ],
+                        },
+                        {
+                            title: "Backend",
+                            sections: [
+                                {
+                                    label: "API & Server",
+                                    tech: ["Python", "FastAPI"],
+                                },
+                                {
+                                    label: "Validation & ORM",
+                                    tech: ["Pydantic", "SQLAlchemy"],
+                                },
+                            ],
+                        },
+                        {
+                            title: "Data & Infrastructure",
+                            sections: [
+                                {
+                                    label: "Database",
+                                    tech: ["PostgreSQL"],
+                                },
+                                {
+                                    label: "DevOps",
+                                    tech: ["Docker"],
+                                },
+                            ],
+                        },
+                    ].map((group) => (
+                        <div key={group.title} className="space-y-5">
+                            <h3 className="text-2xl font-semibold text-foreground font-mono">
+                                {group.title}
+                            </h3>
 
-                    {/* Backend */}
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-sm font-medium text-muted-foreground">Backend:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary">FastAPI</Badge>
-                            <Badge variant="secondary">SQLAlchemy</Badge>
-                            <Badge variant="secondary">Pydantic</Badge>
+                            <div className="space-y-5">
+                                {group.sections.map((section) => (
+                                    <div
+                                        key={section.label}
+                                        className="rounded-xl border bg-background p-5 shadow-sm"
+                                    >
+                                        <p className="mb-4 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                                            {section.label}
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2">
+                                            {section.tech.map((tech) => (
+                                                <span
+                                                    key={tech}
+                                                    className="rounded-md bg-muted px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-muted/70"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Frontend */}
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-sm font-medium text-muted-foreground">Frontend:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary">Next.js</Badge>
-                            <Badge variant="secondary">React</Badge>
-                            <Badge variant="secondary">Tailwind</Badge>
-                            <Badge variant="secondary">shadcn/ui</Badge>
-                        </div>
-                    </div>
-
-                    {/* Database */}
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-sm font-medium text-muted-foreground">Database:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary">PostgreSQL</Badge>
-                            <Badge variant="secondary">SQLAlchemy</Badge>
-                        </div>
-                    </div>
-
-                    {/* Infrastructure */}
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-sm font-medium text-muted-foreground">Infrastructure:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary">Docker</Badge>
-                        </div>
-                    </div>
-
-                    {/* Languages */}
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-sm font-medium text-muted-foreground">Languages:</h3>
-                        <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary">Python</Badge>
-                            <Badge variant="secondary">TypeScript</Badge>
-                            <Badge variant="secondary">JavaScript</Badge>
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                    {/* <Link href='#'>
-                        <Button>[Live Demo]</Button>
-                    </Link> */}
-                    <Link href='https://github.com/ignasprak/CalorieTrack'>
-                        <Button variant="outline">[GitHub]</Button>
-                    </Link>
-                </div>
+
             </section>
 
             {/* Hero image */}
@@ -199,7 +223,7 @@ export default function CalorieTrackerPage() {
                             <CardContent className="p-5">
                                 <p className="font-medium">ADD A MEAL</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users can quickly log meals by entering basic nutritional information or selecting from recent entries.
                                 </p>
                             </CardContent>
                         </Card>
@@ -208,7 +232,7 @@ export default function CalorieTrackerPage() {
                             <CardContent className="p-5">
                                 <p className="font-medium">ADD A CUSTOM MEAL</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users can create fully custom meals by manually entering nutritional values such as calories and macronutrients.
                                 </p>
                             </CardContent>
                         </Card>
@@ -217,7 +241,7 @@ export default function CalorieTrackerPage() {
                             <CardContent className="p-5">
                                 <p className="font-medium">GET DAILY TOTALS</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    The application dynamically calculates total calories and macronutrients for the current day by aggregating
                                 </p>
                             </CardContent>
                         </Card>
@@ -226,7 +250,7 @@ export default function CalorieTrackerPage() {
                             <CardContent className="p-5">
                                 <p className="font-medium">HISTORICAL DASHBOARD</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users can view past meal data and nutritional trends over selected date ranges. This feature enables
                                 </p>
                             </CardContent>
                         </Card>
@@ -234,46 +258,50 @@ export default function CalorieTrackerPage() {
                 </div>
 
                 <div className="space-y-4">
-                    <h2 className="font-mono text-2xl font-semibold">Future Features</h2>
+                    <h2 className="font-mono text-2xl font-semibold">Future Features (DISCLAIMER: some are very far in the future)</h2>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <Card>
                             <CardContent className="p-5">
-                                <p className="font-medium">ADD A MEAL</p>
+                                <p className="font-medium">FOOD API INTEGRATION</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users will be able to upload images of their meals, with the system estimating nutritional values using
+                                    image recognition techniques. This aims to make meal logging faster and more intuitive.
                                 </p>
                             </CardContent>
                         </Card>
 
                         <Card>
                             <CardContent className="p-5">
-                                <p className="font-medium">ADD A CUSTOM MEAL</p>
+                                <p className="font-medium">IMAGE-BASED MEAL LOGGING</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users will be able to upload images of their meals, with the system estimating nutritional values using
+                                    image recognition techniques. This aims to make meal logging faster and more intuitive.
                                 </p>
                             </CardContent>
                         </Card>
 
                         <Card>
                             <CardContent className="p-5">
-                                <p className="font-medium">GET DAILY TOTALS</p>
+                                <p className="font-medium">PERSONALISED GOAL TRACKING</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Users will be able to set and adjust personalised calorie and macronutrient goals, with the system
+                                    providing real-time feedback on progress and remaining intake.
                                 </p>
                             </CardContent>
                         </Card>
 
                         <Card>
                             <CardContent className="p-5">
-                                <p className="font-medium">HISTORICAL DASHBOARD</p>
+                                <p className="font-medium">ADVANCED INSIGHTS & VISUALISATION</p>
                                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                    [Short description of the feature.]
+                                    Future updates will include charts and analytics for visualising trends in calorie intake, macronutrient
+                                    balance, and long-term progress, helping users better understand their dietary habits.
                                 </p>
                             </CardContent>
                         </Card>
                     </div>
                 </div>
-
+                {/* 
                 <div className="space-y-4">
                     <h2 className="font-mono text-2xl font-semibold">Challenges</h2>
                     <p className="max-w-3xl leading-relaxed text-muted-foreground">
@@ -291,7 +319,6 @@ export default function CalorieTrackerPage() {
                 </div>
             </section>
 
-            {/* Screenshot gallery */}
             <section className="mt-16 space-y-6">
                 <h2 className="font-mono text-2xl font-semibold">Gallery</h2>
 
@@ -326,7 +353,10 @@ export default function CalorieTrackerPage() {
                         </p>
                     </div>
                 </div>
+                */}
             </section>
+
+
 
         </main >
     )
